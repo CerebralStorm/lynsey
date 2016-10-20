@@ -15,6 +15,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'prettyphoto-rails'
 gem 'rails_12factor', group: :production
+gem 'easy-sms'
+gem 'rails_admin'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -25,6 +27,7 @@ gem 'rails_12factor', group: :production
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry'
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'

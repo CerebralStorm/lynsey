@@ -29,22 +29,26 @@
         <div class="col-sm-6">
           <div id="contact-form-section">
             <div class="status alert alert-success" style="display: none"></div>
-            <form id="contact-form" class="contact" name="contact-form" method="post" action="send-mail.php">
+            <%= form_for Message.new, html: {id: 'contact-form'} do |f| %>
               <div class="form-group">
-                <input type="text" name="name" class="form-control name-field" required="required" placeholder="Your Name"></div>
-                <div class="form-group">
-                  <input type="email" name="email" class="form-control mail-field" required="required" placeholder="Your Email">
-                </div>
-                <div class="form-group">
-                  <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-primary">Send</button>
-                </div>
-              </form>
+                <%= f.text_field :name, class: "form-control mail-field", required: true, placeholder: 'Your Name' %>
+              </div>
+              <div class="form-group">
+                <%= f.email_field :email, class: "form-control mail-field", required: true, placeholder: 'Your Email' %>
+              </div>
+              <div class="form-group">
+                <%= f.phone_field :phone, class: "form-control mail-field", required: true, placeholder: 'Your Phone' %>
+              </div>
+              <div class="form-group">
+                <%= f.text_area :content, class: "form-control", required: true, placeholder: 'Message', rows: '6', required: true %>
+              </div>
+              <div class="form-group">
+                <%= f.submit 'Send', class: "btn btn-primary" %>
+              </div>
+            <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section> <!--/#contact-->
+  </section>
